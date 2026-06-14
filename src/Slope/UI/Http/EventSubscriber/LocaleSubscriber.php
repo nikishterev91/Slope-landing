@@ -28,7 +28,6 @@ final readonly class LocaleSubscriber implements EventSubscriberInterface
 
     public function onKernelRequest(RequestEvent $event): void
     {
-
         $request = $event->getRequest();
 
         if ($request->attributes->has('_locale')) {
