@@ -1,0 +1,112 @@
+meta:
+    title: "Slope — Modern Living"
+    description: "Slope — Modern Living. Redesigned in a dark, luxury architectural style."
+
+navigation:
+    residences: "Residences"
+    tour_3d: "3D Tour"
+    contact: "Contact"
+    inquire_now: "Inquire Now"
+    toggle_theme: "Toggle theme"
+    toggle_menu: "Toggle menu"
+
+hero:
+    eyebrow: "Two Residences · One Vision"
+    title:
+        high_end: "High-end"
+        residential_design: "residential design"
+        and_build: "build"
+    cta: "Discuss the Project"
+    description: "An exclusive enclave of two identical architectural residences, crafted for those who measure luxury in light, space, and silence."
+    scroll: "Scroll"
+    scroll_to_residences: "Scroll to residences"
+
+stats:
+    years_experience: "years of experience"
+    completed_projects: "completed projects"
+
+preview:
+    featured_properties: "Featured Properties"
+    previous_property: "Previous property"
+    next_property: "Next property"
+
+properties:
+    eyebrow: "The Twin Residences"
+    title: "Identical in form.<br/>Singular in feeling."
+    intro: "Two mirror-built residences share the same uncompromising blueprint — floor-to-ceiling glass, sculpted concrete, and interiors finished to order."
+
+    residence_01:
+        tag: "Residence 01"
+        name: "The North House"
+        description: "Oriented to the morning light, with a private garden courtyard and a double-height living volume."
+
+    residence_02:
+        tag: "Residence 02"
+        name: "The South House"
+        description: "A mirror of its twin, framing the evening sun across an infinity-edge terrace and reflecting pool."
+
+    specs:
+        sq_ft: "Sq Ft"
+        bedrooms: "Bedrooms"
+        bathrooms: "Bathrooms"
+
+    request_details: "Request details"
+
+showcase:
+    eyebrow: "Interactive Showcase"
+    title: "Walk through, before you walk in."
+    badge: "3D Architectural Model"
+    heading: "Explore the 3D Model"
+    description: "Navigate every room, finish, and sightline in a fully interactive render."
+    launch: "Launch Experience"
+    hint: "Drag · Zoom · Click to enter rooms"
+    loading: "Loading model..."
+    ready: "Model ready — demo only"
+
+contact:
+    eyebrow: "Private Inquiry"
+    title: "Begin a conversation."
+    description: "Viewings are arranged privately and by appointment. Share your details and a member of our team will respond personally within one business day."
+    sales: "Sales"
+    phone: "Phone"
+
+    form:
+        full_name: "Full Name"
+        email: "Email"
+        phone: "Phone"
+        project_interest: "Project of Interest"
+        select_residence: "Select a residence"
+        custom_message: "Custom Message"
+        send_inquiry: "Send Inquiry"
+
+        options:
+            north_house: "The North House (Residence 01)"
+            south_house: "The South House (Residence 02)"
+            either: "Either residence"
+
+        success: "Thank you — your inquiry has been received. We will be in touch shortly."
+
+        errors:
+            full_name: "Please enter your full name."
+            email: "Please enter a valid email address."
+            phone: "Please enter a valid phone number."
+            project: "Please select a residence."
+            message: "Please tell us a little more (10+ chars)."
+
+footer:
+    copyright: "Slope Residences. All rights reserved."
+    privacy: "Privacy"
+    terms: "Terms"
+
+social:
+    instagram: "Instagram"
+    linkedin: "LinkedIn"
+    pinterest: "Pinterest"
+
+error_page:
+    error_404: "Error 404"
+    space: "Space"
+    undefined: "undefined"
+    coordinates: "The architectural coordinates you are trying to access do not exist within this twin residence configuration. The page may have been repositioned or cleared."
+    return_to_project: "Return to Project"
+    report_issue: "Report Issue"
