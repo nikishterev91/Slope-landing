@@ -1,0 +1,57 @@
+<section class="properties section" id="properties">
+    <div class="section__head reveal">
+        <p class="eyebrow">{{ 'properties.eyebrow' | trans({}, 'messages')  }}</p>
+        <h2 class="section__title">{{ 'properties.title' | trans | raw }}</h2>
+        <p class="section__intro">
+            {{ 'properties.intro' | trans({}, 'messages')  }}
+        </p>
+    </div>
+
+    <div class="properties__grid">
+        <article class="property glass-panel reveal">
+            <div class="property__media">
+                <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+                    alt="Residence One — minimalist exterior with floor-to-ceiling glass"
+                    loading="lazy"
+                />
+                <span class="property__tag">{{ 'properties.residence_01.tag' | trans({}, 'messages')  }}</span>
+            </div>
+            <div class="property__body">
+                <h3 class="property__name">The North House</h3>
+                <p class="property__desc">
+                    {{  'properties.residence_01.description' | trans({}, 'messages')  }}
+                </p>
+                <ul class="property__specs">
+                    <li><span>4,200</span>{{ 'properties.specs.sq_ft' | trans({}, 'messages')  }}</li>
+                    <li><span>4</span>{{  'properties.specs.bedrooms' | trans({}, 'messages')  }}</li>
+                    <li><span>5</span>{{  'properties.specs.bathrooms' | trans({}, 'messages')  }}</li>
+                </ul>
+                <a href="#contact" class="property__link">{{ 'properties.request_details' | trans({}, 'messages')  }} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            </div>
+        </article>
+
+        <article class="property glass-panel reveal">
+            <div class="property__media">
+                <img
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+                    alt="Residence Two — minimalist exterior at golden hour"
+                    loading="lazy"
+                />
+                <span class="property__tag">{{ 'properties.residence_02.tag' | trans({}, 'messages')  }}</span>
+            </div>
+            <div class="property__body">
+                <h3 class="property__name">The South House</h3>
+                <p class="property__desc">
+                    {{  'properties.residence_02.description' | trans({}, 'messages')  }}
+                </p>
+                <ul class="property__specs">
+                    <li><span>4,200</span>{{ 'properties.specs.sq_ft' | trans({}, 'messages')  }}</li>
+                    <li><span>4</span>{{  'properties.specs.bedrooms' | trans({}, 'messages')  }}</li>
+                    <li><span>5</span>{{ 'properties.specs.bathrooms' | trans({}, 'messages') }}}</li>
+                </ul>
+                <a href="#contact" class="property__link">{{  'properties.request_details' | trans({}, 'messages')  }} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            </div>
+        </article>
+    </div>
+</section>

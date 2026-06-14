@@ -1,0 +1,63 @@
+<section class="contact section" id="contact">
+    <div class="contact__grid">
+        <div class="contact__intro reveal">
+            <p class="eyebrow">{{ 'contact.eyebrow' | trans({}, 'messages') }}</p>
+            <h2 class="section__title">{{ 'contact.title' | trans({}, 'messages') }}</h2>
+            <p class="contact__copy">
+                {{ 'contact.description' | trans({}, 'messages') }}
+            </p>
+            <div class="contact__meta">
+                <p><span>{{ 'contact.sales' | trans({}, 'messages') }}</span> hello@slope-living.com</p>
+                <p><span>{{ 'contact.phone' | trans({}, 'messages') }}</span> +1 (555) 014‑0099</p>
+            </div>
+        </div>
+
+        <form class="form glass-panel reveal" id="inquiryForm" novalidate>
+            <div class="form__row">
+                <div class="field">
+                    <label for="name">{{ 'contact.form.full_name' | trans({}, 'messages') }}</label>
+                    <input type="text" id="name" name="name" autocomplete="name" />
+                    <small class="field__error" data-error-for="name"></small>
+                </div>
+            </div>
+
+            <div class="form__row form__row--split">
+                <div class="field">
+                    <label for="email">{{ 'contact.form.email' | trans({}, 'messages') }}</label>
+                    <input type="email" id="email" name="email" autocomplete="email" />
+                    <small class="field__error" data-error-for="email"></small>
+                </div>
+                <div class="field">
+                    <label for="phone">{{ 'contact.form.phone' | trans({}, 'messages') }}</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" />
+                    <small class="field__error" data-error-for="phone"></small>
+                </div>
+            </div>
+
+            <div class="form__row">
+                <div class="field">
+                    <label for="project">{{ 'contact.form.project_interest' | trans({}, 'messages') }}</label>
+                    <select id="project" name="project">
+                        <option value="">{{ 'contact.form.select_residence' | trans({}, 'messages') }}</option>
+                        <option value="north">{{ 'contact.form.options.north_house' | trans({}, 'messages') }}</option>
+                        <option value="south">{{ 'contact.form.options.south_house' | trans({}, 'messages') }}</option>
+                        <option value="either">{{ 'contact.form.options.either' | trans({}, 'messages') }}</option>
+                    </select>
+                    <small class="field__error" data-error-for="project"></small>
+                </div>
+            </div>
+
+            <div class="form__row">
+                <div class="field">
+                    <label for="message">{{ 'contact.form.custom_message' | trans({}, 'messages') }}</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    <small class="field__error" data-error-for="message"></small>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn--gold form__submit">{{ 'contact.form.custom_message' | trans({}, 'messages') }}</button>
+            <p class="form__success" id="formSuccess" role="status" hidden>
+                {{ 'contact.form.success' | trans({}, 'messages') }}            </p>
+        </form>
+    </div>
+</section>
