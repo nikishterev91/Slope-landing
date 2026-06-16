@@ -1,0 +1,218 @@
+
+:root {
+    /* Colors - Default Dark Mode */
+    --bg-dark: #0a0907;
+    --bg-dark-soft: #12100d;
+    --bg-dark-card: rgba(18, 16, 13, 0.5);
+
+    --text-light: #f5f1e9;
+    --text-dim: #9e978a;
+
+    --gold: #c2a36a;
+    --gold-deep: #a8884e;
+
+    --line-light: rgba(245, 241, 233, 0.08);
+    --line-glow: rgba(194, 163, 106, 0.2);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(14, 12, 10, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.07);
+    --glass-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+    --glass-backdrop: blur(20px) saturate(120%);
+
+    /* Component specific overrides */
+    --btn-white-bg: #fff;
+    --btn-white-text: #12100d;
+    --btn-white-hover-bg: var(--gold);
+    --btn-white-hover-text: #12100d;
+    --btn-white-shadow: rgba(255, 255, 255, 0.1);
+
+    --showcase-overlay: rgba(10, 9, 7, 0.7);
+    --nav-scrolled-bg: rgba(10, 9, 7, 0.8);
+
+    /* Fonts */
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, sans-serif;
+    --outfit: "Outfit", "Inter", sans-serif;
+
+    /* Layout */
+    --space: clamp(5rem, 10vw, 9rem);
+    --max: 1240px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root.light-mode {
+    /* Colors - Light Mode Overrides */
+    --bg-dark: #f5f1e9; /* Slope Cream */
+    --bg-dark-soft: #e7e1d4; /* Dimmed Cream / Beige */
+    --bg-dark-card: rgba(255, 255, 255, 0.5);
+
+    --text-light: #16140f; /* Slope Charcoal */
+    --text-dim: #625c52; /* Deep Greige */
+
+    --line-light: rgba(22, 20, 15, 0.08); /* Dark lines */
+    --line-glow: rgba(194, 163, 106, 0.15);
+
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(22, 20, 15, 0.08);
+    --glass-shadow: 0 24px 48px rgba(22, 20, 15, 0.06);
+
+    /* Component specific overrides */
+    --btn-white-bg: #16140f; /* Dark button in light mode */
+    --btn-white-text: #f5f1e9;
+    --btn-white-hover-bg: var(--gold);
+    --btn-white-hover-text: #12100d;
+    --btn-white-shadow: rgba(0, 0, 0, 0.15);
+
+    --showcase-overlay: rgba(22, 20, 15, 0.65);
+    --nav-scrolled-bg: rgba(245, 241, 233, 0.8);
+}
+
+/* ============================================================
+   Base Setup
+   ============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--sans);
+    background: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background-color 0.4s var(--ease), color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.eyebrow {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    display: inline-block;
+}
+
+.section {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: var(--space) 1.5rem;
+}
+
+.section__head {
+    max-width: 640px;
+    margin-bottom: 4.5rem;
+}
+
+.section__title {
+    font-family: var(--outfit);
+    font-weight: 400;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.section__intro,
+.contact__copy {
+    margin-top: 1.5rem;
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    max-width: 48ch;
+}
+
+/* Glass Utility */
+.glass-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border-radius: var(--radius-md);
+    transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.glass-panel:hover {
+    border-color: rgba(194, 163, 106, 0.25);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(194, 163, 106, 0.05);
+}
+
+/* Decorative Crosshair detail for panels */
+.crosshair-container {
+    position: relative;
+}
+
+.crosshair-container::after {
+    content: "+";
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* ============================================================
+   Responsive Layouts
+   ============================================================ */
+
+@media (max-width: 350px) {
+    .section, .hero, .properties, .showcase, .contact {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    .glass-panel {
+        padding: 1rem !important;
+    }
+
+    /* 4. Downscale typography slightly so long words don't clip lines */
+    .preview-card__title,
+    .property__name {
+        font-size: 1.15rem !important;
+        letter-spacing: -0.01em !important;
+    }
+
+    .preview-card__desc,
+    .property__desc {
+        font-size: 0.8rem !important;
+        line-height: 1.35 !important;
+    }
+
+    /* 5. Prevent inline spec blocks from overlapping */
+    .property__specs {
+        gap: 0.8rem !important;
+        padding: 1rem 0 !important;
+    }
+
+    .property__specs span {
+        font-size: 1.3rem !important;
+    }
+}
+
