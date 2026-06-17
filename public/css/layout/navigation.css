@@ -91,14 +91,6 @@
     display: none;
 }
 
-.light-mode .nav__theme-toggle .icon-sun {
-    display: none;
-}
-
-.light-mode .nav__theme-toggle .icon-moon {
-    display: block;
-}
-
 .nav__toggle {
     display: none;
     flex-direction: column;
@@ -166,11 +158,6 @@
     font-weight: 300;
     font-size: 0.75rem;
     user-select: none;
-}
-
-/* Light mode override adjustment */
-.light-mode .nav__lang-separator {
-    color: rgba(0, 0, 0, 0.15);
 }
 
 /* ============================================================

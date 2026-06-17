@@ -12,8 +12,6 @@
 .hero__media {
     position: absolute;
     inset: 0;
-    /*background: url('../images/dark-background-3d-image.png') center / cover no-repeat;*/
-    /*background: url('../images/img_3.png') center / cover no-repeat;*/
     background: url('../../images/chat-gtp-improvisation.png') center / cover no-repeat;
 
     transform: scale(1.05);
@@ -21,26 +19,7 @@
 }
 
 .light-mode .hero__media {
-    /*background: url('../images/openart-image-night image.png') center / cover no-repeat;*/
-
-    /*background: url('../images/img_1.png') center / cover no-repeat;*/
-    /*background: url('../images/test-gemini.png') center / cover no-repeat;*/
-    /*background: url('../images/canva-test.png') center / cover no-repeat;*/
-
-
-    /*background: url('../images/img.png') center / cover no-repeat;*/
-
     background: url('../../images/chat-gtp-improvisation.png') center / cover no-repeat;
-
-    /*background: url('../images/Gemini_Generated_Image_2wgltg2wgltg2wgl.png') center / cover no-repeat;*/
-    /*background: url('../images/img_3.png') center / cover no-repeat;*/
-    /*background-position: center center;*/
-    /*background-repeat: no-repeat;*/
-
-    /* Zoom out effect: changes from 'cover' to a controlled percentage */
-    /*background-size: 90% auto;*/
-
-    /* Match your light mode background color so the edges blend seamlessly */
     background-color: var(--bg-dark);
 
 }
@@ -51,7 +30,6 @@
     z-index: 1;
     pointer-events: none;
 
-    /* Pure environmental shadows melting into #0a0907 */
     background: radial-gradient(
         circle at 50% 45%,
         rgba(10, 9, 7, 0.02) 0%,
@@ -72,81 +50,6 @@
         transparent 65%,
         var(--bg-dark) 100%
     );
-}
-
-/* ============================================================
-   LIGHT MODE OVERLAY (The Aged, Worn-Off Sun-Bleached Effect)
-   ============================================================ */
-/*.light-mode .hero__overlay {*/
-/*    !* Instead of a dark gradient, we use a warm, powdery matte wash (#e7e1d4).*/
-/*       - The center lets the crisp architecture slip through at 0%.*/
-/*       - By 60%, it applies a chalky, desaturated filter over the trees.*/
-/*       - At 95%, it matches your light canvas perfectly (#f5f1e9).*/
-/*    *!*/
-/*    background: radial-gradient(*/
-/*        circle at 50% 45%,*/
-/*        rgba(231, 225, 212, 0.0) 0%,*/
-/*        rgba(231, 225, 212, 0.35) 55%,*/
-/*        rgba(245, 241, 233, 0.85) 85%,*/
-/*        var(--bg-dark) 100%*/
-/*    );*/
-/*}*/
-
-.light-mode .hero__overlay {
-    /* We use a multi-layer background stack here:
-       - LAYER 1 (Top Fog): A soft, atmospheric mist that starts at 85% opacity
-         at the very top to protect your nav text, fading completely into the image by 25% down.
-       - LAYER 2 (Core Ambient Wash): Your beautiful sun-bleached radial gradient,
-         with the thresholds pushed outward to open up the sides.
-    */
-    background:
-        /* 1. Top Fog Header Shield */
-        linear-gradient(
-            to bottom,
-            rgba(245, 241, 233, 0.85) 0%,
-            rgba(245, 241, 233, 0.4) 12%,
-            rgba(245, 241, 233, 0.0) 25%
-        ),
-            /* 2. Expanded Side Radial Wash */
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(231, 225, 212, 0.0) 0%,
-            rgba(231, 225, 212, 0.28) 62%,  /* Lowered opacity and pushed out to clear the sides */
-            rgba(245, 241, 233, 0.82) 89%,  /* Pushed further out to expose more scenery width */
-            var(--bg-dark) 100%
-        );
-}
-
-.light-mode .hero__overlay::after {
-    /* Kept exactly as you liked it—the natural bottom paper bleed */
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(245, 241, 233, 0) 40%,
-        rgba(245, 241, 233, 0.6) 75%,
-        var(--bg-dark) 100%
-    );
-}
-
-/*.light-mode .hero__overlay::after {*/
-/*    !* A linear wash that simulates the bottom of an old paper print*/
-/*       where the emulsion has completely oxidized and faded into the page.*/
-/*    *!*/
-/*    background: linear-gradient(*/
-/*        to bottom,*/
-/*        transparent 0%,*/
-/*        rgba(245, 241, 233, 0) 40%,*/
-/*        rgba(245, 241, 233, 0.6) 75%,*/
-/*        var(--bg-dark) 100%*/
-/*    );*/
-/*}*/
-
-/* Optional Bonus: Weathering the Image Node directly */
-.light-mode .hero__media {
-    /* Slightly drops contrast and warmth saturation to make the photo itself
-       look like a physical matte print with slightly faded inks */
-    filter: contrast(0.92) saturate(0.88) brightness(1.02);
-    transition: filter 0.4s var(--ease);
 }
 
 .hero__grid {
@@ -189,7 +92,6 @@
     max-width: 32ch;
 }
 
-/* Hero Right: Interactive stats & preview card */
 .hero__right {
     display: flex;
     flex-direction: column;
@@ -290,7 +192,7 @@
 }
 
 .preview-card__slides {
-    margin-top: 1.5rem; /* Space for the absolute icon */
+    margin-top: 1.5rem;
 }
 
 .preview-card__slide {
@@ -369,7 +271,6 @@
     border-color: #fff;
 }
 
-/* Scroll indicator */
 .hero__scroll {
     position: absolute;
     bottom: 2rem;
@@ -451,22 +352,16 @@
         grid-template-columns: 1fr;
     }
 
-    /*.preview-card__media {*/
-    /*    aspect-ratio: 16 / 10;*/
-    /*}*/
-
     .preview-card__media {
-        aspect-ratio: 16 / 11; /* Slightly taller aspect ratio */
+        aspect-ratio: 16 / 11;
     }
 }
 
 @media (max-width: 380px) {
     .preview-card__media {
-        aspect-ratio: 4 / 3 !important; /* Forces a much square-er, taller box */
-        /*min-height: 260px !important;    !* Hard floor safety net so text never leaks *!*/
+        aspect-ratio: 4 / 3 !important;
     }
 
-    /* Downscale the internal text sizes so they take up less vertical space */
     .preview-card__title {
         font-size: 1.25rem !important;
     }
@@ -477,24 +372,19 @@
     }
 
     .preview-card__content {
-        padding: 1.25rem !important; /* Tighten padding to maximize room */
+        padding: 1.25rem !important;
     }
 }
 
-
-/* Custom optimization layer for ultra-small viewports (300px to 350px) */
 @media (max-width: 350px) {
-    /* 2. Re-adjust the aspect ratio to give natural height without forcing a hard min-height */
     .preview-card__media {
-        aspect-ratio: 1.1 / 1 !important; /* Almost a perfect square, allowing natural text flow underneath */
+        aspect-ratio: 1.1 / 1 !important;
     }
 
-    /* 3. Drop internal card paddings to maximize structural width */
     .preview-card__content {
         padding: 1rem !important;
     }
 
-    /* 4. Downscale typography slightly so long words don't clip lines */
     .preview-card__title {
         font-size: 1.15rem !important;
         letter-spacing: -0.01em !important;
@@ -505,4 +395,3 @@
         line-height: 1.35 !important;
     }
 }
-
