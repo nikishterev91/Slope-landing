@@ -1,0 +1,71 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 1.1rem 2.2rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.4s var(--ease);
+}
+
+.btn--gold {
+    background: var(--gold);
+    color: #12100d;
+}
+.btn--gold:hover {
+    background: #fff;
+    color: #12100d;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(194, 163, 106, 0.2);
+}
+
+.btn--white {
+    background: var(--btn-white-bg);
+    color: var(--btn-white-text);
+    border-radius: 999px;
+    padding: 1.1rem 2.4rem;
+}
+.btn--white:hover {
+    background: var(--btn-white-hover-bg);
+    color: var(--btn-white-hover-text);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px var(--btn-white-shadow);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--text-light);
+    border-color: rgba(245, 241, 233, 0.2);
+    border-radius: var(--radius-sm);
+}
+.btn--ghost:hover {
+    border-color: var(--text-light);
+    background: rgba(245, 241, 233, 0.05);
+}
+
+.btn--icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-light);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s var(--ease);
+}
+.btn--icon:hover {
+    background: #fff;
+    color: #12100d;
+    border-color: #fff;
+}

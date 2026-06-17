@@ -1,0 +1,129 @@
+.showcase {
+    background: var(--bg-dark);
+}
+
+.showcase__stage {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    min-height: 480px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+}
+
+.showcase__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    transition: transform 8s var(--ease), opacity 0.8s var(--ease);
+}
+
+.showcase__stage:hover .showcase__bg {
+    transform: scale(1.03);
+}
+
+.showcase__stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        transparent 20%,
+        var(--showcase-overlay) 100%
+    );
+    z-index: 1;
+}
+
+.showcase__ui {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    padding: 3rem 2rem;
+}
+
+.showcase__badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(194, 163, 106, 0.4);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    background: rgba(10, 9, 7, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    margin-bottom: 2rem;
+}
+
+.showcase__heading {
+    font-family: var(--outfit);
+    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -0.02em;
+}
+
+.showcase__text {
+    margin-top: 1rem;
+    color: var(--text-dim);
+    max-width: 44ch;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.showcase__btn {
+    margin-top: 2.5rem;
+}
+
+.showcase__btn-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #12100d;
+    animation: pulse 1.8s ease-in-out infinite;
+}
+
+.showcase__hint {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    opacity: 0.7;
+}
+
+/* ============================================================
+   Responsive Layouts
+   ============================================================ */
+
+@media (max-width: 880px) {
+    .showcase__stage {
+        aspect-ratio: auto !important;   /* Breaks the rigid 16:8 width calculation */
+        min-height: 300px !important;    /* Lowers the minimum height bound for mobile */
+        height: auto !important;         /* Allows content to dictate scale safely */
+        width: 100% !important;
+    }
+
+    /* Adjust the inner absolute UI alignment so text doesn't overflow */
+    .showcase__ui {
+        padding: 3rem 1.5rem !important;
+        position: relative !important;   /* Changes from centered absolute to natural flow if needed */
+    }
+
+    .showcase__heading {
+        font-size: 2rem !important;      /* Downscales the large typography */
+    }
+}
