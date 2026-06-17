@@ -1,0 +1,210 @@
+.nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    transition: background 0.5s var(--ease), box-shadow 0.5s var(--ease), padding 0.5s var(--ease);
+    padding: 1.6rem 0;
+}
+
+.nav--scrolled {
+    background: var(--nav-scrolled-bg);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 0;
+}
+
+.nav__inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    font-family: var(--outfit);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav__logo-icon {
+    color: var(--gold);
+}
+
+.nav__links {
+    display: flex;
+    gap: 2.8rem;
+    margin-left: auto;
+    margin-right: 2.8rem;
+}
+
+.nav__links a {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    opacity: 0.8;
+    transition: opacity 0.3s var(--ease);
+}
+.nav__links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1.5px;
+    background: var(--gold);
+    transition: width 0.35s var(--ease);
+}
+.nav__links a:hover {
+    opacity: 1;
+}
+.nav__links a:hover::after {
+    width: 100%;
+}
+
+.nav__cta {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+}
+
+.nav__theme-toggle {
+    margin-right: 1.25rem;
+    flex-shrink: 0;
+}
+
+.nav__theme-toggle .icon-sun {
+    display: block;
+}
+
+.nav__theme-toggle .icon-moon {
+    display: none;
+}
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 101;
+}
+.nav__toggle span {
+    width: 24px;
+    height: 1.5px;
+    background: var(--text-light);
+    transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+.nav__toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Container to group language switcher, theme switch, and CTA cleanly */
+.nav__utils {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem; /* Keeps custom spacing uniform */
+}
+
+/* Base structural layout for the switcher */
+.nav__lang {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--outfit, sans-serif); /* Fallback to your main system font */
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Unselected/Dimmed Language Style */
+.nav__lang-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid transparent;
+}
+
+.nav__lang-link:hover {
+    color: var(--text-light);
+}
+
+/* Selected Active Language Indicator Style */
+.nav__lang-link.is-active {
+    color: var(--text-light);
+    border-color: var(--gold, #c5a880); /* Matches your project accent accent color */
+}
+
+/* Subtle separator bar style */
+.nav__lang-separator {
+    color: rgba(255, 255, 255, 0.15);
+    font-weight: 300;
+    font-size: 0.75rem;
+    user-select: none;
+}
+
+/* ============================================================
+   Responsive Layouts
+   ============================================================ */
+
+@media (max-width: 880px) {
+    .nav__links,
+    .nav__cta {
+        display: none;
+    }
+
+    .nav__toggle {
+        display: flex;
+    }
+
+    /* Mobile menu */
+    .nav__links.is-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-dark);
+        backdrop-filter: var(--glass-backdrop);
+        -webkit-backdrop-filter: var(--glass-backdrop);
+        padding: 2.5rem 1.5rem;
+        gap: 2rem;
+        margin: 0;
+        border-top: 1px solid var(--line-light);
+        border-bottom: 1px solid var(--line-light);
+    }
+}
+
+.nav__utils {
+    @media (max-width: 446px){
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 370px){
+        gap: 1rem;
+    }
+}
+
+.nav__theme-toggle {
+    @media (max-width: 446px){
+        margin-right: auto;
+    }
+}

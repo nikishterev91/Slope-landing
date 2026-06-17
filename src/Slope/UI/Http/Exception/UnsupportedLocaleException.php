@@ -10,14 +10,11 @@ final class UnsupportedLocaleException extends BadRequestHttpException
 {
     public function __construct(mixed $cookieLocale, mixed $requestLocale)
     {
-        $cookie = $this->normalize($cookieLocale);
-        $request = $this->normalize($requestLocale);
-
         parent::__construct(
             sprintf(
                 'Unsupported locale: Cookie: %s, Request: %s',
-                $cookie,
-                $request
+                $this->normalize($cookieLocale),
+                $this->normalize($requestLocale)
             )
         );
     }
